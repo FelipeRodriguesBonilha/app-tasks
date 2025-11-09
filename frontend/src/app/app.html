@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Lista de Tarefas</h1>
+
+  <form (ngSubmit)="addTask()">
+    <input [(ngModel)]="newTaskTitle" name="title" placeholder="Nova tarefa" required />
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <ul>
+    @for (task of tasks; track task.id) {
+      <li>
+        <input type="checkbox" [(ngModel)]="task.completed" (change)="toggleTask(task.id!)" />
+        <span [class.done]="task.completed">{{ task.title }}</span>
+        <button (click)="deleteTask(task.id!)">❌</button>
+      </li>
+    }
+  </ul>
+</div>
