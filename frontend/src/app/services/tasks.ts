@@ -13,7 +13,7 @@ export interface Task {
   providedIn: 'root',
 })
 export class Tasks {
-  private apiUrl = 'http://localhost:3000/tasks';
+  private apiUrl = 'http://54.94.20.117:3000/tasks';
 
   constructor(private http: HttpClient) { }
 
